@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1537688583 source:c:\users\vaibh\onedrive\desktop\snake\main.cpp
+	<iostream>
+	<stdlib.h>
+

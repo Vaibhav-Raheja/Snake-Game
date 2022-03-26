@@ -1,0 +1,105 @@
+int curX=400,curY=300;
+    int circX=400,circY=300,speed=5;
+    appleX=rand()%750;
+    appleY=rand()%550;
+    while(gameover==false)
+    {
+    cleardevice();
+    appleX=rand()%750;
+    appleY=rand()%550;
+    //apple
+    if(gameover==false)
+    {
+        circle(appleX,appleY,7.5);
+        setfillstyle(SOLID_FILL,YELLOW);
+        floodfill(appleX,appleY,YELLOW);
+        setfillstyle(SOLID_FILL,BLUE);
+    }
+    else if(gameover==false && appleeaten==true)
+    {
+        cout<<"eaten";
+        setcolor(YELLOW);
+        circle(300,400,7.5);
+        setfillstyle(SOLID_FILL,YELLOW);
+        floodfill(appleX,appleY,YELLOW);
+        setfillstyle(SOLID_FILL,BLUE);
+        appleeaten=false;
+    }
+    else if(curX>=appleX-7.5 && curX<=appleX+7.5 && curY>=appleY-7.5 && curY<=appleY+7.5 )
+    {
+        cout<<"kfhkebfkewnf/n";
+        appleeaten=true;
+    }
+    setcolor(BLUE);
+    bar(circX,circY,circX+20,circY+20);
+    if(GetAsyncKeyState(VK_LEFT))
+    {
+        circX-=speed;
+        curX=circX;
+        cout<<"x-"<<curX<<"   y-"<<curY;
+        //x=curX-20;
+    }
+    else if(GetAsyncKeyState(VK_RIGHT))
+    {
+        circX+=speed;
+        curX=circX;
+        cout<<"x-"<<curX<<"   y-"<<curY;
+        //x=curX+20;
+    }
+    else if(GetAsyncKeyState(VK_UP))
+    {
+        circY-=speed;
+        curY=circY;
+        cout<<"x-"<<curX<<"   y-"<<curY;
+
+        /* if(x==VK_LEFT||x==VK_RIGHT)
+        {
+          y=curY;
+        }
+        else if(x==VK_UP)
+        {
+         y=curY-20;
+        }**/
+
+    }
+    else if(GetAsyncKeyState(VK_DOWN))
+    {
+        circY+=speed;
+        curY=circY;
+        cout<<"x-"<<curX<<"   y-"<<curY;
+        /*if(x==VK_LEFT||x==VK_RIGHT)
+        {
+          y=curY;
+        }
+        else if(x==VK_DOWN)
+        {
+         y=curY+10;
+        }*/
+
+    }
+    //y=curY;
+    /*if(curX==appleX&&curY==appleY)
+    {
+        setcolor(YELLOW);
+        bar(x,y,x+20,y+20);
+    }*/
+
+     //score...
+    /*if(curX==appleX&&curY==appleY)
+    {
+        for(int i=0;i<1;i++)
+        {
+             score=i+10;
+
+        }
+
+    }
+    setcolor(YELLOW);
+    sprintf(s,"Score %d",score);
+    outtextxy(0,0,s);*/
+     if(circX==800||circY==600||circX==0||circY==0)
+     {
+        gameover=true;
+     }
+    delay(50);
+    }
