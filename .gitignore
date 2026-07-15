@@ -1,0 +1,15 @@
+# Build artifacts
+*.o
+*.obj
+*.exe
+*.out
+bin/
+obj/
+
+# Code::Blocks user/local files
+*.layout
+*.depend
+
+# OS/editor cruft
+.DS_Store
+Thumbs.db
